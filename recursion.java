@@ -21,7 +21,16 @@ public class recursion{
     }
 
     /*As Per classwork*/
-    public static ArrayList<Integer> makeAllSums(){
+    public static ArrayList<Integer> makeAllSums(int n){
+      return mS(n,0);
+    }
+
+    public static ArrayList<Integer> mS(int n, int sum) {
+      ArrayList<Integer> sums = new ArrayList<Integer>();
+      if (n == 0) {
+        sums.add(sum);
+      }
+
     }
 
 }
