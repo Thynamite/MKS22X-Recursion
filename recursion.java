@@ -30,7 +30,11 @@ public class recursion{
       if (n == 0) {
         sums.add(sum);
       }
-
+      else {
+        mS(n-1,sum+n);
+        mS(n-1,sum);
+      }
+      return sums;
     }
 
 }
