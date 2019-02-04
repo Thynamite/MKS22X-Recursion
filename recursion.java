@@ -28,12 +28,20 @@ public class Recursion{
         return sqrts (n, tolerance, guesser(n,guess));
       }
     }
+
     /*Recursively find the n'th fibbonaci number in linear time
      *fib(0) = 1; fib(1) = 1; fib(5) = 5
      *precondition: n is non-negative
      */
     public static int fib(int n){
-      return 0;
+      return fibtimer(0,1,n);
+    }
+
+    public static int fibtimer(int backtwo, int backone, int more){
+      if (more == 0) {
+        return backtwo+backone;
+      }
+      return fibtimer(backone,backone+1,more-1);
     }
 
     /*As Per classwork*/
@@ -74,7 +82,7 @@ public class Recursion{
             System.out.println(sqrt(0, 0.00001));         // 0
 
             System.out.println("\n");
-            /*
+
             System.out.println("fib()");
             System.out.println("-----------------------\n");
 
@@ -93,7 +101,7 @@ public class Recursion{
             System.out.println("fib(7)");
             System.out.println("EXPECTED: 13");
             System.out.println(fib(7));                   // 13
-
+            /*
             System.out.println("makeAllSums()");
             System.out.println("-----------------------\n");
 
