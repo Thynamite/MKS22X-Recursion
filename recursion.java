@@ -56,8 +56,8 @@ public class Recursion{
         sums.add(sum);
       }
       else {
-        mS(n-1,sum+n,sums);
-        mS(n-1,sum,sums);
+        mS(n-1,sum+n,sums); //added
+        mS(n-1,sum,sums);   //not added
       }
 
     }
