@@ -46,19 +46,20 @@ public class Recursion{
 
     /*As Per classwork*/
     public static ArrayList<Integer> makeAllSums(int n){
-      return mS(n,0);
+      ArrayList<Integer> sums = new ArrayList<Integer>();
+      mS(n,0, sums);
+      return sums;
     }
 
-    public static ArrayList<Integer> mS(int n, int sum) {
-      ArrayList<Integer> sums = new ArrayList<Integer>();
-      if (n == 0) {
+    public static void mS(int n, int sum, ArrayList<Integer> sums) {
+      if (n == 0 && !sums.contains(sum)) {
         sums.add(sum);
       }
       else {
-        mS(n-1,sum+n);
-        mS(n-1,sum);
+        mS(n-1,sum+n,sums);
+        mS(n-1,sum,sums);
       }
-      return sums;
+
     }
     //Courtesy of class group list
     public static void main(String[] args) {
@@ -101,7 +102,7 @@ public class Recursion{
             System.out.println("fib(7)");
             System.out.println("EXPECTED: 13");
             System.out.println(fib(7));                   // 13
-            /*
+
             System.out.println("makeAllSums()");
             System.out.println("-----------------------\n");
 
@@ -120,7 +121,7 @@ public class Recursion{
             System.out.println("makeAllSums(3)");
             System.out.println("EXPECTED: [0, 3, 2, 5, 1, 4, 3, 6]");
             System.out.println(makeAllSums(3));           // [0, 3, 2, 5, 1, 4, 3, 6]
-            */
+
     }
 
 }
