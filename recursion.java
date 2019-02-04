@@ -47,19 +47,25 @@ public class Recursion{
     /*As Per classwork*/
     public static ArrayList<Integer> makeAllSums(int n){
       ArrayList<Integer> sums = new ArrayList<Integer>();
-      mS(n,0, sums);
+      if (!mS(n,0, sums)){
+        mS(n,0, sums);
+      }
       return sums;
     }
 
-    public static void mS(int n, int sum, ArrayList<Integer> sums) {
+    public static boolean mS(int n, int sum, ArrayList<Integer> sums) {
       if (n == 0 && !sums.contains(sum)) {
         sums.add(sum);
+        return true;
+      }
+      if (n == -1){
+        return false;
       }
       else {
         mS(n-1,sum+n,sums); //added
         mS(n-1,sum,sums);   //not added
       }
-
+      return true;
     }
     //Courtesy of class group list
     public static void main(String[] args) {
@@ -82,6 +88,12 @@ public class Recursion{
             System.out.println("EXPECTED: 0");
             System.out.println(sqrt(0, 0.00001));         // 0
 
+            System.out.println("----");
+
+            System.out.println("sqrt(100, 0.00001)");
+            System.out.println("EXPECTED: 10");
+            System.out.println(sqrt(100, 0.00001));
+
             System.out.println("\n");
 
             System.out.println("fib()");
@@ -102,6 +114,14 @@ public class Recursion{
             System.out.println("fib(7)");
             System.out.println("EXPECTED: 13");
             System.out.println(fib(7));                   // 13
+
+            System.out.println("----");
+
+            System.out.println("fib(40)");
+            System.out.println("Expected: 102,334,155");
+            System.out.println(fib(40));
+
+            System.out.println("----");
 
             System.out.println("makeAllSums()");
             System.out.println("-----------------------\n");
