@@ -39,9 +39,9 @@ public class Recursion{
 
     public static int fibtimer(int backtwo, int backone, int more){
       if (more == 0) {
-        return backtwo+backone;
+        return backtwo;
       }
-      return fibtimer(backone,backone+1,more-1);
+      return fibtimer(backone,backone+backtwo,more-1);
     }
 
     /*As Per classwork*/
