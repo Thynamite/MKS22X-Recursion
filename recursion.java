@@ -54,7 +54,7 @@ public class Recursion{
     }
 
     public static boolean mS(int n, int sum, ArrayList<Integer> sums) {
-      if (n == 0 && !sums.contains(sum)) {
+      if (n == 0 /*&& !sums.contains(sum)*/) {
         sums.add(sum);
         return true;
       }
